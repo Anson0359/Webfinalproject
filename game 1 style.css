@@ -1,0 +1,81 @@
+#run {
+    position: absolute;
+    left: 600px;
+    top: 500px;
+    background-color: OldLace;
+    border: 3px solid Moccasin;
+    border-radius: 10px;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+#reset {
+    position: absolute;
+    left: 800px;
+    top: 500px;
+    background-color: OldLace;
+    border: 3px solid Moccasin;
+    border-radius: 10px;
+    color: black;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#game{
+	position:absolute;
+	top:150px;
+	left: 600px;
+}
+#spendmoney1{
+	width:50px;
+	height:50px;
+}
+#spendmoney2{
+	width:103.4px;
+	height:50px;
+}
+#spendmoney3{
+	width:89px;
+	height:50px;
+}
+td {
+    text-align: center;
+	color: white;
+	font-size: 20px;
+	border: 1px solid;
+	width:50px;
+	height:50px;
+}
+table{
+	border-style:none;
+}
+td.odd{
+	background-color:red;
+}
+td.even{
+	background-color:black;
+}
+td.other{
+	background-color:green;
+}
+td.otherput{
+	background-color:LightSlateGrey;
+	
+}
+#youhave{
+	border:2px solid black;
+	border-radius:10px;
+	position: absolute;
+	right:0%;
+	top:-5px;
+	font-size:50px;
+	
+}

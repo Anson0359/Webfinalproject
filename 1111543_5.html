@@ -1,0 +1,167 @@
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>期末考5</title>
+
+
+</head>
+<style>
+div{
+	position:relative;
+	left:200;
+	top:200;
+	font-size:60;
+	width:500;
+	height:200;
+}
+
+</style>
+
+<body onLoad="init()">
+<div id="time" class="time">you spent time:</div>
+<div id="step" class="step">you step: 0</div>
+
+
+</body>
+<script language = "javascript">
+	var turn = 0;
+	var size = 3;
+	var step1=0;
+
+	var a = new Array(size);
+	for(var i = 0; i < size; i++){
+		a[i] = new Array(size);
+	}
+	
+	function put(event){
+		if ((typeof event == "undefined")||(!event)){
+			event = window.event;
+		}
+		var e1 = event.target || event.srcElement;
+		//e1.bgColor = "#ffffff";
+
+		var x = e1.id.substring(0, 1);
+		var y = e1.id.substring(1, 2);
+	
+		//e1.innerHTML= x+","+y
+	
+		var y1,y2,x1,x2;
+	
+		y1=eval(y)+1;
+	
+		if (y1<size) { 
+	
+		var id2= ""+x+y1;
+		var e2 = document.getElementById(id2);
+		if (e2.name == " ") {
+			e2.name = e1.name;
+			e1.name = " ";
+			e1.innerHTML = e1.name;
+			e2.innerHTML = e2.name;
+			showstep();
+		}
+	
+	}
+
+	y1=eval(y)-1;
+	
+	if (y1>=0) { 
+	
+		var id2= ""+x+y1;
+		var e2 = document.getElementById(id2);
+		if (e2.name == " ") {
+			e2.name = e1.name;
+			e1.name = " ";
+			e1.innerHTML = e1.name;
+			e2.innerHTML = e2.name;
+			showstep();
+		}
+	
+	}
+	
+	x1=eval(x)+1;
+	if (x1<size) { 
+	
+		var id2= ""+x1+y;
+		var e2 = document.getElementById(id2);
+		if (e2.name == " ") {
+			e2.name = e1.name;
+			e1.name = " ";
+			e1.innerHTML = e1.name;
+			e2.innerHTML = e2.name;
+			showstep();
+		}
+	
+	}
+
+	x1=eval(x)-1;
+	
+	if (x1>=0) { 
+	
+		var id2= ""+x1+y;
+		var e2 = document.getElementById(id2);
+		if (e2.name == " ") {
+			e2.name = e1.name;
+			e1.name = " ";
+			e1.innerHTML = e1.name;
+			e2.innerHTML = e2.name;
+			showstep();
+		}
+	
+	}
+	
+	
+}
+
+
+	function init(){
+		var table = document.createElement("TABLE");
+		document.body.appendChild(table);
+		table.border = "2";
+		table.cellSpacing = "2";
+		table.bgColor = "#eeeeee";
+		table.align="center";	
+   
+		var x, y, num1=1;
+   
+		for(x=0;x<size;x++){
+			r = table.insertRow(x);
+			for(y=0;y<size;y++){
+				c = r.insertCell(y);
+				c.width="50";
+				c.height="50";
+				if(num1<=size*size-1){
+					c.name=num1;
+					num1++;
+				}else{
+					c.name=" ";
+				}
+				
+				c.id = ""+x+y;
+				c.vAlign="center";
+				c.align="center";
+				c.onclick = put;
+				//c.innerHTML="aaa";
+		
+				c.appendChild(document.createTextNode(c.name));
+			}
+		}
+	}
+	var time1=1;
+	function show(){
+		document.getElementById("time").innerHTML = "you spent time: " + time1 + " s";
+		time1=time1 +1;
+	}
+	function showstep(){
+		step1++;
+		document.getElementById("step").innerHTML = "you step: " + step1 ;
+		
+	}
+	window.setInterval("show()" , 1000);
+</script>
+
+
+
+</html>
